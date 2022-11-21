@@ -41,7 +41,7 @@ err := coll.FindOneByProjectID(ctx).Where(bson.M{"_id": ID}).Do(&wfInfo)
 
 */
 
-package mongu
+package mou
 
 import (
 	"context"
@@ -201,5 +201,12 @@ func (o Coll) WatchChangeStream(ctx context.Context) *ChangeStreamWatchObject {
 		coll:     o.coll,
 		pipeline: mongo.Pipeline{},
 		opts:     options.ChangeStream(),
+	}
+}
+
+func (o Coll) Tx(ctx context.Context) *TxObject {
+	return &TxObject{
+		ctx:    ctx,
+		client: o.coll.Database().Client(),
 	}
 }

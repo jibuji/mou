@@ -1,8 +1,8 @@
-package mongu
+package mou
 
 import "go.mongodb.org/mongo-driver/bson"
 
-//MergeBsonM ignores non bson.M type
+// MergeBsonM ignores non bson.M type
 func MergeBsonM(ms ...interface{}) bson.M {
 	var result = bson.M{}
 	for _, one := range ms {

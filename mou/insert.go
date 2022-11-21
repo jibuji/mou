@@ -4,7 +4,7 @@
  * @Author: pengfei
  * @Date: 2021-07-01 08:31:06
  */
-package mongu
+package mou
 
 import (
 	"context"
@@ -36,7 +36,7 @@ type InsertManyObject struct {
 	opts *options.InsertManyOptions
 }
 
-//If true, no writes will be executed after one fails. The default value is true.
+// If true, no writes will be executed after one fails. The default value is true.
 func (o *InsertManyObject) Ordered(ordered bool) *InsertManyObject {
 	o.opts.SetOrdered(!ordered)
 	return o

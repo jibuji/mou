@@ -5,7 +5,7 @@
  * @Date: 2021-10-13 08:31:06
  */
 
-package mongu
+package mou
 
 import (
 	"fmt"
